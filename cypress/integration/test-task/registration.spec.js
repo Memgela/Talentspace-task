@@ -18,14 +18,15 @@ describe("Registration", () => {
 
       cy.get("button[type=submit]").click();
     });
-
-    return { username, password };
   }
 
   it("sign up", () => {
     signUp();
-// !!!
-    cy.get(".css-k0qcqu button").should("contain", "Logout");
+
+    cy.get("#root").should(
+      "contain",
+      "Hey there! Welcome to your reading list. Get started by heading over to "
+    );
   });
 
   it("sign up existing user", () => {
@@ -35,10 +36,7 @@ describe("Registration", () => {
 
     cy.get('div[role="alert"]').within(() => {
       cy.root().should("contain", "There was an error:");
-      cy.root().should(
-        "contain",
-        `Cannot create a new user with the username`
-      );
+      cy.root().should("contain", `Cannot create a new user with the username`);
     });
   });
 });
