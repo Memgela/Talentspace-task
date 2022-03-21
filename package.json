@@ -1,0 +1,15 @@
+{
+  "name": "talentspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@faker-js/faker": "^6.0.0",
+    "cypress": "^9.5.2"
+  },
+  "scripts": {
+    "test": "cypress open"
+  },
+  "author": "",
+  "license": "ISC"
+}
